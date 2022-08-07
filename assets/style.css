@@ -1,0 +1,348 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #100F0F;
+    /* background-color: #F1F1F1; */
+}
+
+h2,
+h3{
+    letter-spacing: 1px;
+    color: #0F3D3E;
+}
+
+header{
+    display: inline;
+}
+
+.jumbotron{
+    padding: 60px;
+    background-color: #377D71;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #F1F1F1;
+    margin-top: 3em;
+}
+
+nav{
+    background-color: #0F3D3E;
+    width: 100%;
+    padding: 20px 15px;
+    z-index: 99999;
+    position: fixed;
+    /* position: sticky; */
+    top: 0;
+}
+
+nav li{
+    display: inline;
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav a{
+    color: #F1F1F1;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.7s ease; 
+}
+
+nav a:hover{
+    color: #E2DCC8;
+    font-weight: bold;
+}
+
+#hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger div{
+    width: 25px;
+    height: 4px;
+    border-radius: 3px;
+    margin: 3px;
+    background-color: white;
+    transition: all 0.4s ease;
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+/* build animation fade */
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    /* transform: rotate(-45deg) translate(-5px,5px); stabil x translate(-5px,5px) */
+    transform: rotate(90deg) translate(9px,10px);
+}
+
+.toggle .line2{
+    /* opacity: 0; */
+    transform: rotate(90deg) translate(2px, 2px);
+}
+
+.toggle .line3{
+    /* transform: rotate(45deg) translate(-5px,-5px); stabil x translate(-5px,-5px) */
+    transform: rotate(90deg) translate(-5px,-6px);
+}
+
+#banner{
+    background: linear-gradient(rgba(0,0,0, .6),rgba(0,0,0, .6)), url('image/space.jpg') no-repeat; 
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    width: 100%;
+    height: 600px;
+}
+
+#caption{
+    width: 100%; 
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 1px 5px 3px black;
+    /* z-index: 2; */
+}
+
+#caption p{
+    font-size: 20px;
+}
+
+main{
+    padding: 60px 20px;
+    overflow: auto;
+}
+
+#content{
+    float: left;
+    width: 75%;
+}
+
+#content article p{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+#merkurius,
+#venus,
+#bumi,
+#mars,
+#jupiter{
+    display: flex;
+    width: 100%;
+}
+
+#sec-merkurius, 
+#sec-venus,
+#sec-bumi,
+#sec-mars,
+#sec-jupiter{
+    padding: 40px;
+    width: 70%;
+}
+
+#merkurius img,
+#venus img,
+#bumi img,
+#mars img,
+#jupiter img{
+    width: 45%;
+    object-fit: cover;
+    object-position: center;
+}
+
+section h2{
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+aside{
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+}
+
+#profile{
+    border-radius: 10px;
+    padding: 30px;
+}
+
+figure .img-profile{
+    width: 65%;
+    border-radius: 200px;
+    max-height: 27vh;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    transform: translate(26%,0%);
+}
+
+figcaption{
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#profile section, #profile figure{
+    width: 100%;
+}
+
+#profile h3{
+    text-align: center;
+    margin: 5px 0;
+}
+
+#profile table{
+    width: 100%;
+    text-align: left;
+    text-transform: capitalize;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+.card{
+    background-color: #F1F1F1;
+    box-shadow: 0 4px 8px 0 rgba(226, 220, 200, .8);
+    /* border-radius: 5px;  */
+    /* padding: 40px; */
+    margin-bottom: 5em;
+}
+
+footer{
+    color: #F1F1F1;
+    text-align: center;
+    padding: 25px;
+    background-color: #0F3D3E;
+}
+
+footer a{
+    color: #E2DCC8;
+}
+
+footer a:hover{
+    color: #F1F1F1;
+}
+
+@media screen and (max-width: 1024px){
+    #content, aside{
+        width: 100%;
+        padding: 0;
+    }
+
+    figure .img-profile{
+        width: 50%;
+        border-radius: 10px;
+        max-height: 65vh;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+        transform: translate(50%,0%);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .jumbotron{
+        margin-top: 6em;
+        font-size: 10px;
+    }
+
+    #caption p{
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    body{
+        overflow-x: hidden;
+    }
+
+    nav ul{
+        position: absolute;
+        right: 0;
+        width: 50%;
+        height: 92vh;
+        top: 8vh;
+        background-color: #0F3D3E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: 0.5s ease-in;
+    }
+
+    nav ul li{
+        opacity: 0;
+    }
+
+    nav ul li a{
+        display: flex;
+        line-height: 90px;
+    }
+
+    nav ul li a:hover{
+        background-color: unset;
+    }
+
+    #hamburger{
+        display: block;
+    }
+
+    #merkurius,
+    #venus,
+    #bumi,
+    #mars,
+    #jupiter{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #sec-merkurius, 
+    #sec-venus,
+    #sec-bumi,
+    #sec-mars,
+    #sec-jupiter{
+        padding: 40px;
+        width: 100%;
+    }
+
+    #merkurius img,
+    #venus img,
+    #bumi img,
+    #mars img,
+    #jupiter img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    footer{
+        font-size: 14px;
+    }
+}
